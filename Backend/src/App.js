@@ -2,11 +2,15 @@ const express = require('express');
 
 const multer = require('multer');
 
+const cors = require('cors')
+
 const postmodel = require('./models/post.model');
 
 const uploadFile = require('./services/storage.service');
 
 const app = express();
+
+app.use(cors())
 
 const upload = multer({storage : multer.memoryStorage()})
 
